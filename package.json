@@ -1,0 +1,25 @@
+{
+  "name": "react-study",
+  "version": "1.0.0",
+  "description": "Exploring react features",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samriddhac/react-study-space.git"
+  },
+  "keywords": [
+    "React",
+    "Redux",
+    "Reusable",
+    "Components"
+  ],
+  "author": "Samriddha Chatterjee",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/samriddhac/react-study-space/issues"
+  },
+  "homepage": "https://github.com/samriddhac/react-study-space#readme"
+}
