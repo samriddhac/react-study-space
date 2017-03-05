@@ -1,6 +1,7 @@
 var path = require('path');
 var webpack = require('webpack');
-var htmlPlugin = require('html-webpack-plugin');
+var HtmlPlugin = require('html-webpack-plugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 var config = {
 
@@ -23,9 +24,14 @@ var config = {
 				warnings:true
 		}),
 		new webpack.optimize.OccurrenceOrderPlugin(),
-		new htmlPlugin({
+		new HtmlPlugin({
 			template:'./src/html/index.html'
-		})
+		}),
+		new CopyWebpackPlugin(
+			[
+				{from: './src/less', to:path.join(__dirname,'dist/style')}
+			]
+		)
 	],
 
 	module: {
@@ -41,5 +47,4 @@ var config = {
 		]
 	}
 };
-
 module.exports = config;
