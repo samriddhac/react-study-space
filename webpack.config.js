@@ -13,7 +13,9 @@ var config = {
 		path:path.join(__dirname, 'dist'),
 		filename: 'app.bundle.js'
 	},
-
+	resolve: {
+    	extensions: ['.js', '.jsx']
+  	},
 	devServer :{
 		port:9090,
 		hot: true
@@ -37,13 +39,18 @@ var config = {
 	module: {
 		loaders: [
 			{
-				test: '/\.jsx?$/',
-				loader: 'babel',
-				include: path.join(__dirname, 'src'),
+				test: /\.jsx?$/,
+				loader: 'babel-loader',
+				exclude: /node_modules/,
 				query: {
 					presets: ['es2015', 'react']
 				}
-			}	
+			},
+			{ 
+				test: /\.js$/, 
+				loader: 'babel-loader', 
+				exclude: /node_modules/ 
+			}
 		]
 	}
 };
