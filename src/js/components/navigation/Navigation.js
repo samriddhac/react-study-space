@@ -6,7 +6,7 @@ class Navigation extends React.Component {
 		return (
 			<div className="navbar">
 				<div className="navlink">SAMPLE GALLARIES</div>
-				<div className="navlink">ABOUT</div>
+				<div className="navlink"><About/></div>
 				<div className="navlink dropdown navlink-button">
 					<span>SIGN IN</span>
 					<div className="dropdown-content signin-content">
