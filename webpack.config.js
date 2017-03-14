@@ -31,7 +31,8 @@ var config = {
 		}),
 		new CopyWebpackPlugin(
 			[
-				{from: './src/less', to:path.join(__dirname,'dist/style')}
+				{from: './src/less', to:path.join(__dirname,'dist/style')},
+				{from: './src/images', to:path.join(__dirname,'dist/images')}
 			]
 		)
 	],
@@ -50,7 +51,16 @@ var config = {
 				test: /\.js$/, 
 				loader: 'babel-loader', 
 				exclude: /node_modules/ 
-			}
+			},
+			{ 
+				test: /\.css$/, 
+				loader: ['style-loader', 'css-loader']
+			},
+			{
+		      test: /\.(jpg|JPG|png)$/,
+		      loader: "url-loader?limit=250000",
+		      exclude: /node_modules/ 
+		    }
 		]
 	}
 };
